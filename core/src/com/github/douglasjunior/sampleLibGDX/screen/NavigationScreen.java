@@ -43,11 +43,19 @@ public class NavigationScreen extends AbstractScreen {
 
     private final float pathWidth = 5; // in meters
 
+    // The size of the GRID
     private final int gridSize = 200;
+
     private final Vector2 screenStart = new Vector2();
     private final Vector2 screenEnd = new Vector2();
+
+    // Define if path will be filled or not
     private boolean pathFilled = true;
+
+    // Define to draw/capture the path or not
     private boolean capturePath = true;
+
+    // Internal counters reset to 0 on startup
     private float areaTotal = 0;
     private float distanceTotal = 0;
 
@@ -140,6 +148,9 @@ public class NavigationScreen extends AbstractScreen {
         camera.rotate(-world.getPlayer().getRotation());
         camera.update();
         camera.rotate(world.getPlayer().getRotation());
+
+        // Change zoom
+        camera.zoom = world.getPlayer().getZoom();
 
         renderMap();
         renderPlayerArea(delta);

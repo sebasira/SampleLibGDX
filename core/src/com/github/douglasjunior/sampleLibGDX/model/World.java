@@ -49,6 +49,9 @@ public class World {
 //            if(Gdx.input.isKeyPressed(Input.Keys.A)) player.strafeLeft(delta);
 //            if(Gdx.input.isKeyPressed(Input.Keys.D)) player.strafeRight(delta);
 
+            if(Gdx.input.isKeyPressed(Input.Keys.W)) player.zoomOut();
+            if(Gdx.input.isKeyPressed(Input.Keys.Z)) player.zoomIn();
+
         }
     }
 }

@@ -10,8 +10,11 @@ public class Player {
     private final World world;
     private float width = 2f;
     private float depth = 4.6f;
-    private float rotation = 0.0f;
+    private float rotation = 23.0f;
     private float rotationModifier;
+
+    // Custom zoom to be controlled by player
+    private float zoom = 1;
 
     private float speed = 3.0f;
     private Vector2 velocity = new Vector2(0.0f, 0.0f);
@@ -69,6 +72,15 @@ public class Player {
         updateBounds();
     }
 
+
+    public void zoomOut (){
+        zoom -= 0.01;
+    }
+
+    public void zoomIn (){
+        zoom += 0.01;
+    }
+
     private void updateBounds() {
         float cosTheta = (float) (Math.cos(Math.toRadians(getRotation())));
         float sinTheta = (float) (Math.sin(Math.toRadians(getRotation())));
@@ -120,5 +132,9 @@ public class Player {
 
     public Vector2 getHitboxFrontLeft() {
         return hitboxFrontLeft;
+    }
+
+    public float getZoom(){
+        return zoom;
     }
 }
