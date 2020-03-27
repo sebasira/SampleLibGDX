@@ -61,7 +61,7 @@ public class NavigationScreen extends AbstractScreen {
         shapeRenderer = new ShapeRenderer();
         batch = new SpriteBatch();
         font = new BitmapFont();
-        playerImage = new TextureRegion(new Texture(Gdx.files.internal("Images/car.png")));
+        playerImage = new TextureRegion(new Texture(Gdx.files.internal("assets/data/images/car.png")));
         camera = new OrthographicCamera();
         fontCamera = new OrthographicCamera();
 
